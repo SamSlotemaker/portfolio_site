@@ -92,6 +92,8 @@
 }
 
 .planet {
+  --speed: 15s;
+
   width: 10vw;
   aspect-ratio: 1;
   background-color: rgb(125, 0, 50);
@@ -110,8 +112,8 @@
 
 .planet_1 {
   background-color: rgb(125, 0, 50);
-  --speed: 20s;
-  --delay: -3s;
+  // --speed: 20s;
+  --delay: -2.5s;
   transform-style: preserve-3d;
 
   .ring {
@@ -130,23 +132,20 @@
 }
 .planet_2 {
   background-color: rgb(9, 194, 64);
-  --speed: 30s;
-  --delay: -6s;
+  // --speed: 30s;
+  --delay: -5s;
 }
 .planet_3 {
   background-color: rgb(240, 255, 102);
-  --speed: 25s;
-  --delay: -8s;
+  // --speed: 25s;
+  --delay: -10s;
 }
 
 @keyframes orbiting {
   0% {
     transform: rotateZ(0turn) translateX(45vw) rotateZ(-0turn) rotateX(-90deg);
-    // transform: rotate(0turn) translateX(min(45vh, 45vw));
   }
   100% {
     transform: rotateZ(1turn) translateX(45vw) rotateZ(-1turn) rotateX(-90deg);
-
-    // transform: rotate(1turn) translateX(min(45vh, 45vw));
   }
 }
