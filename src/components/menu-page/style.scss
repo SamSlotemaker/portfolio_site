@@ -1,0 +1,88 @@
+.menu_page {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(
+    139.09deg,
+    #232323 10.87%,
+    rgb(17, 17, 17) 76.79%
+  );
+  position: relative;
+
+  ul {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+
+    &:hover a:not(.hovering) {
+      opacity: 0.25 !important;
+      filter: blur(4px);
+    }
+  }
+
+  &_link {
+    $firstTop: 0%;
+    $firstLeft: 55%;
+
+    font-family: "Inter", sans-serif;
+    color: #cfcfcf;
+    font-size: 6vw;
+    text-transform: uppercase;
+    position: absolute;
+
+    a {
+      opacity: 0;
+      color: inherit;
+      transition: opacity 0.35s, filter 0.35s;
+      animation: fade-in 3s ease-in-out forwards;
+    }
+
+    &:nth-of-type(2),
+    &:nth-of-type(4) {
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+      letter-spacing: -0.35em;
+    }
+
+    &:nth-of-type(1) {
+      top: $firstTop;
+      left: $firstLeft;
+    }
+
+    &:nth-of-type(2) {
+      a {
+        animation-delay: 1s;
+      }
+      span {
+        pointer-events: none;
+        margin-bottom: 0.3em;
+      }
+      top: calc($firstTop + 0.56em);
+      left: calc($firstLeft - 3.01em);
+    }
+
+    &:nth-of-type(3) {
+      a {
+        animation-delay: 1.7s;
+      }
+      top: calc($firstTop + 3.46em);
+      left: calc($firstLeft - 3.51em);
+    }
+
+    &:nth-of-type(4) {
+      a {
+        animation-delay: 2.5s;
+      }
+      top: $firstTop;
+      left: calc($firstLeft + 0.37em);
+    }
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
